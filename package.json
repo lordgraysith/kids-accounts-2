@@ -40,6 +40,7 @@
     "lodash": "^4.17.15",
     "mini-css-extract-plugin": "0.8.0",
     "moment": "^2.24.0",
+    "netlify-lambda": "^1.6.3",
     "optimize-css-assets-webpack-plugin": "5.0.3",
     "pnp-webpack-plugin": "1.5.0",
     "postcss-flexbugs-fixes": "4.1.0",
@@ -69,8 +70,10 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "build:client": "node scripts/build.js",
+    "test": "node scripts/test.js",
+    "build": "npm run build:client && npm run build:server",
+    "build:server": "NODE_ENV=production netlify-lambda build src/lambda"
   },
   "eslintConfig": {
     "extends": "react-app"
