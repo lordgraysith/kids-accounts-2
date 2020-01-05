@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Kids from './components/kids'
+import Kid from './components/kid'
+import Accounts from './components/accounts'
+import Account from './components/account'
+import Login from './components/login'
+import './App.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    response: ''
+  }
+
+  render () {
+    return (
+      <Router>
+        <div>
+          <Route exact path='/' component={Kids} />
+          <Route path='/kid/:id' component={Kid} exact />
+          <Route path='/kid/:id/accounts' component={Accounts} exact />
+          <Route
+            path='/kid/:kidId/account/:accountId'
+            component={Account}
+            exact
+          />
+          <Route path='/login' component={Login} exact />
+        </div>
+      </Router>
+    )
+  }
 }
 
-export default App;
+export default App
