@@ -3,6 +3,6 @@ const {getKids} = require('../server/kids-service')
 exports.handler = function(event, context, callback) {
   callback(null, {
     statusCode: 200,
-    body: getKids()
+    body: JSON.stringify(getKids())
   });
 };

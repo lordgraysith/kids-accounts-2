@@ -69,7 +69,8 @@
     "workbox-webpack-plugin": "4.3.1"
   },
   "scripts": {
-    "start": "node scripts/start.js",
+    "start:client": "node scripts/start.js",
+    "start:server": "NODE_ENV=production netlify-lambda serve src/lambda",
     "build:client": "node scripts/build.js",
     "test": "node scripts/test.js",
     "build": "npm run build:client && npm run build:server",

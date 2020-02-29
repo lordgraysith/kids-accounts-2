@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/cdc7020a-d552-4342-8615-92af52dd5d90/deploy-status)](https://app.netlify.com/sites/ecstatic-rosalind-f993c1/deploys)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
