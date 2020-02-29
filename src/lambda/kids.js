@@ -1,8 +1,8 @@
-const {getKids} = require('../server/kids-service')
+import {getKids} from '../server/kids-service'
 
-exports.handler = function(event, context, callback) {
-  callback(null, {
+exports.handler = async function(event, context) {
+  return {
     statusCode: 200,
-    body: JSON.stringify(getKids())
-  });
+    body: JSON.stringify(await getKids())
+  };
 };
