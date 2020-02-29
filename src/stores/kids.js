@@ -5,6 +5,6 @@ export async function getKidById (id) {
 }
 
 export async function getAllKids () {
-  const res = await secureFetch('/api/kids')
+  const res = await secureFetch('/.netlify/functions/kids')
   return await res.json()
 }
